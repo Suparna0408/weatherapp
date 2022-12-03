@@ -1,7 +1,7 @@
 //Gets the input and button showdata elements
 let city = document.querySelector(".city");
 let btn = document.querySelector(".submit");
-let showCity = document.querySelector(".showCity")
+let showCity = document.querySelector(".showCity");
 let showTemp = document.querySelector(".showTemp");
 let showClimate = document.querySelector(".showClimate");
 let dataContainer = document.querySelector(".dataContainer");
@@ -19,13 +19,13 @@ city.addEventListener("keyup", (Event)=>{
 
 
 btn.addEventListener('click', () =>{
-    getdata()
+    getdata();
 });
 
 function getdata(){
         let cityName = city.value;
         let key = "d925ccfc61a5c5b1ccb40153794477bb";
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);
